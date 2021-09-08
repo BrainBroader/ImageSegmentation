@@ -45,15 +45,16 @@ pip install -r requirements.txt
 ### Execution Instructions
 To execute the program the following command is used:
 ```
-python main.py arg1
+python main.py arg1 arg2
 ```
 where 
 
 * arg1 is the path to the image.
+* arg2 is the number of image segments you want (It must be an integer).
 
 
 Running example, 
 ```
-python main.py img.jpg
+python main.py img.jpg 2
 ```
 
