@@ -1,3 +1,4 @@
+import sys
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 from gaussian_mixture_model import GaussianMixtureModel
@@ -5,12 +6,14 @@ from gaussian_mixture_model import GaussianMixtureModel
 
 def main():
     # Read Images
-    img = mpimg.imread('im.jpg')
+    path = sys.argv[1]
+    segments = sys.argv[2]
+    img = mpimg.imread(path)
     img = img.astype(float)/255
 
     # train the model
     print("Training with EM...")
-    gmm = GaussianMixtureModel(16)
+    gmm = GaussianMixtureModel(int(segments))
     gmm.fit(img)
 
     # show segmented image
